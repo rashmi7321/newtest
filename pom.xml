@@ -7,29 +7,37 @@
 	<packaging>war</packaging>
 	<name>Hello World Web Application Repository</name>
 	<description>Simplest possible Java Webapp</description>
-	<properties>
-           <build.number>SNAPSHOT</build.number>
-        </properties>
+	<scm>
+           <connection>scm:svn:http://127.0.0.1/dummy</connection>
+           <developerConnection>scm:svn:https://127.0.0.1/dummy</developerConnection>
+           <tag>HEAD</tag>
+           <url>http://127.0.0.1/dummy</url>
+           </scm>
 	<build>
 		<plugins>
 		    <plugin>     
 			<groupId>org.codehaus.mojo</groupId>
-                        <artifactId>autoincrement-versions-maven-plugin</artifactId>
-			<version>2.0-SNAPSHOT</version>
+                        <artifactId>buildnumber-maven-plugin</artifactId>
+			<version>1.4</version>
                          <executions>
 			     <execution>
-				<id>update-pom-versions</id>
+				<id>buildnumber</id>
+				<phase>validate</phase>
 			        <goals>
-				   <goal>increment</goal>
-				   <goal>commit</goal>
+				   <goal>create</goal>
 				 </goals>
-				 <phase>compile</phase>
-		          <configuration> 
-			     <autoIncrementVersion>true</autoIncrementVersion> 
+			  </execution>
+		     </executions>
+		     <configuration>
+			 <format>{0,number}</format>
+			 <items>
+		            <item>buildNumber</item>
+		          </items>
+			  <doCheck>false</doCheck>
+			  <doUpdate>false</doUpdate> 
 		     </configuration>
-		   </execution> 
-		</executions>
 	    </plugin>
+	    <finalName>${project.artifactId}-${project.version}.${buildNumber}</finalName>
      </plugins>
  </build>
 
