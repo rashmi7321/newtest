@@ -16,12 +16,11 @@
 		<plugins>
 		    <plugin>
 			<resources>
-	                      <!-- Filter for version name in properties -->
-	                <directory>src/main/resources</directory>
-	                 <filtering>true</filtering>
-	                 <includes>
-		             <include>app.properties</include>
-	                 </includes>
+	                    <directory>src/main/resources</directory>
+	                    <filtering>true</filtering>
+	                    <includes>
+		               <include>app.properties</include>
+	                    </includes>
 	              </resource>
                   </resources>        
 			<groupId>org.apache.maven.plugins</groupId>
