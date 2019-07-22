@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.efsavage</groupId>
+	<artifactId>hello-world-wartest</artifactId>
+	<version>0.0.1</version>
+	<packaging>war</packaging>
+	<name>Hello World Web Application Repository</name>
+	<description>Simplest possible Java Webapp</description>
+	<properties>
+            <!-- Printable version name -->
+            <versionName>${project.version}</versionName>
+        </properties>
+	
+	<build>
+		<plugins>
+		    <plugin>
+			<resources>
+		           <!-- Filter for version name in properties -->
+			   <directory>src/main/resources</directory>
+			   <filtering>true</filtering>
+			   <includes>
+				<include>app.properties</include>
+			    </includes>
+			  </resource>
+		     </resources>    
+			<groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <version>3.0.0</version>
+                        <configuration>
+                          <!-- Filter for version name in html-->
+                           <webResources>
+                               <resource>
+                                  <directory>src/main/webapp</directory>
+                                  <filtering>true</filtering>
+                                  <includes>
+                                      <include>index.html</include>
+                                  </includes>
+                             </resource>
+                     </webResources> 
+		</configuration>
+	      </plugin>
+     </plugins>
+ </build>
+
+</project>
