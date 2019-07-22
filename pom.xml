@@ -7,10 +7,7 @@
 	<packaging>war</packaging>
 	<name>Hello World Web Application Repository</name>
 	<description>Simplest possible Java Webapp</description>
-	<scm>
-           <connection>scm:svn:https://github.com/rashmi7321/newtest.git </connection>
-           <developerConnection>scm:svn:https://github.com/rashmi7321/newtest.git </developerConnection>
-           </scm>
+	
 	<build>
 		<plugins>
 		    <plugin>     
