@@ -8,36 +8,24 @@
 	<name>Hello World Web Application Repository</name>
 	<description>Simplest possible Java Webapp</description>
 	<properties>
-            <!-- Printable version name -->
-            <versionName>${project.version}</versionName>
+           <build.number>SNAPSHOT</build.number>
         </properties>
-	
 	<build>
 		<plugins>
-		    <plugin>
-			<resources>
-			   <resource>	
-	                      <directory>src/main/resources</directory>
-	                      <filtering>true</filtering>
-	                      <includes>
-		                 <include>app.properties</include>
-	                      </includes>
-	              </resource>
-                  </resources>        
+		    <plugin>     
 			<groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
-                        <version>3.0.0</version>
-                        <configuration>
-                          <!-- Filter for version name in html-->
-                           <webResources>
-                               <resource>
-                                  <directory>src/main/webapp</directory>
-                                  <filtering>true</filtering>
-                                  <includes>
-                                      <include>index.html</include>
-                                  </includes>
-                             </resource>
-                     </webResources> 
+                         <configuration>
+			     <manifest>
+				<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+			      </manifest>
+                               <archive>
+				   <manifestEntries>
+				      <Specification-Title>${project.name}</Specification-Title>
+				      <Specification-Version>${project.version}</Specification-Version>
+				      <Implementation-Version>${build.number}</Implementation-Version>
+                                   </manifestEntries>
+			      </archive>	       
 		</configuration>
 	      </plugin>
      </plugins>
