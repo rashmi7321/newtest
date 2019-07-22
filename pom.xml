@@ -37,8 +37,8 @@
 			  <doUpdate>false</doUpdate> 
 		     </configuration>
 	    </plugin>
-	    <finalName>${project.artifactId}-${project.version}.${buildNumber}</finalName>
      </plugins>
+     <finalName>${project.artifactId}-${project.version}.${buildNumber}</finalName>
  </build>
 
 </project>
