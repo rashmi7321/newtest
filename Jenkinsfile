@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Let's clone the source
-                    git 'https://github.com/rashmi7321/hello-worldtest.git';
+                    git 'https://github.com/rashmi7321/newtest.git';
                 }
             }
         }
