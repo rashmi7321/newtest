@@ -13,18 +13,17 @@
         </properties>
 	
 	<build>
-	    <resources>
-	       <!-- Filter for version name in properties -->
-	       <directory>src/main/resources</directory>
-	       <filtering>true</filtering>
-	       <includes>
-		    <include>app.properties</include>
-	       </includes>
-	  </resource>
-      </resources>    
 		<plugins>
 		    <plugin>
-			
+			<resources>
+	                      <!-- Filter for version name in properties -->
+	                <directory>src/main/resources</directory>
+	                 <filtering>true</filtering>
+	                 <includes>
+		             <include>app.properties</include>
+	                 </includes>
+	              </resource>
+                  </resources>        
 			<groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-war-plugin</artifactId>
                         <version>3.0.0</version>
